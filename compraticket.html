@@ -62,23 +62,25 @@
     <p class="text-center h3">VALOR DEL TICKET $200</p>
 
     <div class="d-flex justify-content-center">
-        <form class="row g-3 col-6" action="">
+        <form id="formCompra" class="row g-3 col-6" action="">
             <div class="col-md-6">
                 <input type="text" class="form-control" id="inputNombre" placeholder="Nombre"  aria-label="Nombre" >
             </div>
             <div class="col-md-6">
                 <input type="text" class="form-control" id="inputApellido" placeholder="Apellido"  aria-label="Apellido">
             </div>
+            <span id="error-nombre" class="error-mensaje col-md-6"></span>
+            <span id="error-apellido" class="error-mensaje col-md-6"></span>
             <div class="col-md-12">
                 <input type="text" class="form-control" id="inputMail" placeholder="E-mail" aria-label="E-mail">
             </div>
+            <span id="error-email" class="error-mensaje"></span>
             <div class="col-md-6">
                 <label for="inputCantidad" class="form-label">Cantidad</label>
                 <input type="text" class="form-control" id="inputCantidad" placeholder="Cantidad"  aria-label="Cantidad" >
             </div>
             <div class="col-md-6">
                 <label for="inputCategoria" class="form-label">Categoria</label>
-                
                 <select id="inputCategoria" class="form-select">
                     <option selected>Estudiante</option>
                     <option>Trainee</option>
@@ -86,20 +88,23 @@
                     <option>General</option>
                 </select>
             </div>
+            <span id="error-cantidad" class="error-mensaje"></span>
+            
             <div class="alert alert-primary " role="alert" >
                 <p class="mb-0" id="importeTotal">Total a Pagar: $</p>
             </div>
             
             
             <div class="col-md-6">
-                <button class="btn btn-success col-sm-12  botonBorrar" type="button" id="btnBorrar" onclick="borrar();">Borrar</button>
+                <button class="btn btn-success col-sm-12  botonBorrar" type="reset" id="btnBorrar">Borrar</button>
             </div>
             <div class="col-md-6">
-                <button class="btn btn-success col-sm-12 botonEnviar" type="button" id="btnResumen"  onclick="calcularTotal();">Resumen</button>  
+                <button class="btn btn-success col-sm-12 botonEnviar" type="submit" id="btnResumen">Resumen</button>  
             </div>
             
         </form>
     </div>
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
     crossorigin="anonymous"></script>
