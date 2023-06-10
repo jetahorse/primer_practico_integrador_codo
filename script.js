@@ -1,21 +1,24 @@
 function calcTotalaPagar(descuento,cantidad){
-    return ((200*cantidad)*(1-descuento/100));
+    if (!descuento===100)
+        return ((200*cantidad)*(1-descuento/100));
+    else
+        return 200*cantidad;
 }
 
 
 let frmCompra=document.querySelector("#formCompra");
 frmCompra.addEventListener("submit", function(event){
     event.preventDefault();
-    var nombre=document.querySelector("#inputNombre");
-    var apellido=document.querySelector("#inputApellido");
-    var email=document.querySelector("#inputMail");
-    var cantidad=document.querySelector("#inputCantidad");
-    var categoria=document.querySelector("#inputCategoria");
-    var importePagoTotal=document.querySelector("#importeTotal");
-    var validNombre=document.querySelector("#error-nombre");
-    var validApellido=document.querySelector("#error-apellido");
-    var validEmail=document.querySelector("#error-email");
-    var validCantidad=document.querySelector("#error-cantidad");
+    let nombre=document.querySelector("#inputNombre");
+    let apellido=document.querySelector("#inputApellido");
+    let email=document.querySelector("#inputMail");
+    let cantidad=document.querySelector("#inputCantidad");
+    let categoria=document.querySelector("#inputCategoria");
+    let importePagoTotal=document.querySelector("#importeTotal");
+    let validNombre=document.querySelector("#error-nombre");
+    let validApellido=document.querySelector("#error-apellido");
+    let validEmail=document.querySelector("#error-email");
+    let validCantidad=document.querySelector("#error-cantidad");
 
     
     let expresionRemail=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -65,4 +68,10 @@ frmCompra.addEventListener("submit", function(event){
     }
     importePagoTotal.innerHTML="Total a pagar: $ "+totalPago;
         
+});
+
+let btnBorrar=document.querySelector("#btnBorrar");
+btnBorrar.addEventListener("click", function(event){
+    let importePagoTotal=document.querySelector("#importeTotal");
+    importePagoTotal.innerHTML="Total a pagar: $";
 })
